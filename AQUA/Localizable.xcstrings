@@ -1,6 +1,26 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Activate Manually" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手动开启"
+          }
+        }
+      }
+    },
+    "Auto monitor unresponsive applications failed, You may activate manually." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自动开启监听失败，您可能需要手动开启。"
+          }
+        }
+      }
+    },
     "Launch at Login" : {
       "localizations" : {
         "en" : {

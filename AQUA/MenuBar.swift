@@ -12,7 +12,7 @@ class MenuBar {
     static let shared = MenuBar()
 
     private(set) var statusItem: NSStatusItem!
-    private var cancel: AnyCancellable?
+    private var subscriptions = Set<AnyCancellable>()
 
     private init() {}
 
@@ -38,8 +38,17 @@ class MenuBar {
 
         let launchItem = NSMenuItem(title: String(localized: "Launch at Login"), action: #selector(launchAtLogin), keyEquivalent: "")
         menu.addItem(launchItem)
-        cancel = LaunchAtLogin.enabledPulisher.sink { enabled in
-            launchItem.state = enabled ? .on : .off
+        LaunchAtLogin.enabledPublisher
+            .sink { launchItem.state = $0 ? .on : .off }
+            .store(in: &subscriptions)
+
+        if !Listeners.listenedPublisher.value {
+            let listenItem = NSMenuItem(title: String(localized: "Activate Manually"), action: #selector(addListener), keyEquivalent: "")
+            listenItem.toolTip = String(localized: "Auto monitor unresponsive applications failed, You may activate manually.")
+            menu.addItem(listenItem)
+            Listeners.listenedPublisher
+                .sink { listenItem.state = $0 ? .on : .off }
+                .store(in: &subscriptions)
         }
 
         menu.addItem(NSMenuItem.separator())
@@ -52,6 +61,10 @@ class MenuBar {
 
     @objc private func launchAtLogin() {
         LaunchAtLogin.toggle()
+    }
+
+    @objc private func addListener() {
+        Listeners.addNotifyProc()
     }
 
     @objc private func terminate() {
