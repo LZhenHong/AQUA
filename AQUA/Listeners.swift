@@ -7,6 +7,13 @@
 
 import AppKit
 
+func addNotifyProc() {
+    let error = CGSRegisterNotifyProc(unresponsiveAppNotifyProc, kCGSEventNotificationAppIsUnresponsive, nil)
+    if error != .success {
+        print("Add unresponsive app notify proc failed: \(error)")
+    }
+}
+
 func unresponsiveAppNotifyProc(type: CGSEventType, data: UnsafeMutableRawPointer?, dataLength: UInt32, userData: UnsafeMutableRawPointer?) {
     guard let data,
           type == kCGSEventNotificationAppIsUnresponsive,

@@ -13,6 +13,7 @@
 		F21DF8E62CA1A9380006A1C7 /* Listeners.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21DF8E52CA1A92F0006A1C7 /* Listeners.swift */; };
 		F21DF8E82CA1C2B20006A1C7 /* LaunchAtLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21DF8E72CA1C2B20006A1C7 /* LaunchAtLogin.swift */; };
 		F21DF8EA2CA1C9A20006A1C7 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F21DF8E92CA1C9A20006A1C7 /* Localizable.xcstrings */; };
+		F21DF8EC2CA296350006A1C7 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21DF8EB2CA2962E0006A1C7 /* MenuBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		F21DF8E52CA1A92F0006A1C7 /* Listeners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listeners.swift; sourceTree = "<group>"; };
 		F21DF8E72CA1C2B20006A1C7 /* LaunchAtLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLogin.swift; sourceTree = "<group>"; };
 		F21DF8E92CA1C9A20006A1C7 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		F21DF8EB2CA2962E0006A1C7 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				F21DF8DB2CA175790006A1C7 /* CGSInternal */,
 				F21DF8E02CA175790006A1C7 /* main.swift */,
 				F21DF8DC2CA175790006A1C7 /* AppDelegate.swift */,
+				F21DF8EB2CA2962E0006A1C7 /* MenuBar.swift */,
 				F21DF8E52CA1A92F0006A1C7 /* Listeners.swift */,
 				F21DF8E72CA1C2B20006A1C7 /* LaunchAtLogin.swift */,
 				F21DF8DE2CA175790006A1C7 /* AQUA-Bridging-Header.h */,
@@ -194,6 +197,7 @@
 				F21DF8E42CA175790006A1C7 /* main.swift in Sources */,
 				F21DF8E62CA1A9380006A1C7 /* Listeners.swift in Sources */,
 				F21DF8E82CA1C2B20006A1C7 /* LaunchAtLogin.swift in Sources */,
+				F21DF8EC2CA296350006A1C7 /* MenuBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
