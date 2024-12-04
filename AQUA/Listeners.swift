@@ -12,6 +12,10 @@ enum Listeners {
     static let listenedPublisher = CurrentValueSubject<Bool, Never>(false)
 
     static func addNotifyProc() {
+        guard !listenedPublisher.value else {
+            return
+        }
+
         let error = CGSRegisterNotifyProc(unresponsiveAppNotifyProc, kCGSEventNotificationAppIsUnresponsive, nil)
         guard error == .success else {
             print("Add unresponsive app notify proc failed: \(error)")
